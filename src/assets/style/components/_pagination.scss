@@ -1,0 +1,39 @@
+/* :::::::: PAGINATION :::::::: */
+.pgination{
+    li {
+        display: inline-block;
+    }
+
+    li:first-child {
+        margin-right: .5rem;
+    }
+}
+
+.paginationArrow,
+.paginationNumber {
+    font-size       : 1.1rem;
+    padding         : .5rem .8rem;
+    border          : none;
+    background-color: transparent;
+    cursor               : pointer;
+    border-radius        : $borderRadius;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius   : $borderRadius;
+    -ms-border-radius    : $borderRadius;
+    -o-border-radius     : $borderRadius;
+    
+    &:hover{
+        background-color: $primaryColor;
+        color           : $colorWhite;
+        border-color    : $primaryColor;
+    }
+    &:active {
+        background-color: $primaryColor650;
+    }
+}
+
+.paginationNumber {
+    border               : 1px solid $colorBorder2;
+    background-color     : $colorWhite;
+    margin-right: .5rem;
+}

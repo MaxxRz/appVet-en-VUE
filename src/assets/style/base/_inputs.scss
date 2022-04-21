@@ -1,0 +1,79 @@
+/* :::::: INPUTS :::::: */
+
+.formBlock {
+	label {
+		padding-bottom: .2rem;
+		display       : block;
+		color         : $textColorGrey;
+		white-space          : nowrap;
+	}
+
+	input,
+	textarea,
+	select {
+		width                : 100%;
+		font-size            : 1rem;
+		padding              : .5rem;
+		height               : 2.5rem;
+		resize               : none;
+		border               : 1px solid $colorBorder2;
+		border-radius        : $borderRadius;
+		-webkit-border-radius: $borderRadius;
+		-moz-border-radius   : $borderRadius;
+		-ms-border-radius    : $borderRadius;
+		-o-border-radius     : $borderRadius;
+		background-color     : $colorWhite;
+	}
+}
+
+input:not(input[type=submit]):focus,
+select:focus,
+textarea:focus {
+	outline-style     : none;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(62, 140, 133, 1);
+	-moz-box-shadow   : 0px 0px 0px 1px rgba(62, 140, 133, 1);
+	box-shadow        : 0px 0px 0px 1px rgba(62, 140, 133, 1);
+}
+
+input[type=checkbox] {
+	display: none;
+
+	&+span {
+		display            : flex;
+		cursor             : pointer;
+		-moz-user-select   : none;
+		-webkit-user-select: none;
+		-ms-user-select    : none;
+		user-select        : none;
+		align-items        : center;
+		font-size: 1.2rem;
+
+
+		&:hover::before {
+			-webkit-box-shadow: 0px 0px 0px 1px rgba(62, 140, 133, 1);
+			-moz-box-shadow   : 0px 0px 0px 1px rgba(62, 140, 133, 1);
+			box-shadow        : 0px 0px 0px 1px rgba(62, 140, 133, 1);
+		}
+	}
+
+	&+span::before {
+		display           : inline-block;
+		content           : "";
+		border            : 1px solid $colorBorder2;
+		border-radius     : 3px;
+		width             : 1.2rem;
+		height            : 1.2rem;
+		margin-right      : .3em;
+		padding           : 1px;
+		background-clip   : content-box;
+		transition        : background-color .2s;
+		-webkit-transition: background-color .2s;
+		-moz-transition   : background-color .2s;
+		-ms-transition    : background-color .2s;
+		-o-transition     : background-color .2s;
+	}
+
+	&:checked+span::before {
+		background-color: $primaryColor;
+	}
+}

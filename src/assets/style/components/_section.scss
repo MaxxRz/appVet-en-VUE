@@ -1,0 +1,29 @@
+.sectionContainer {
+    background-color: $colorWhite;
+    border-width: 1px 0 1px 0;
+    border-color: $colorBorder;
+    border-style: solid;
+    overflow-x: auto;
+    
+    @include rwd_min(sm) {
+        border-radius        : $borderRadius;
+        -webkit-border-radius: $borderRadius;
+        -moz-border-radius   : $borderRadius;
+        -ms-border-radius    : $borderRadius;
+        -o-border-radius     : $borderRadius;
+        border-left-width: 1px;
+        border-right-width: 1px;
+    }
+}
+.sectionBody {
+    margin: 0 $marginRL $marginRL;
+}
+.sectionHead {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : $marginRL $marginRL calc(#{$marginRL} - .5rem);
+}
+.sectionFooter{
+    padding: calc(#{$marginRL} - .5rem) $marginRL $marginRL;
+}

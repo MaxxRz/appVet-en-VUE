@@ -1,0 +1,80 @@
+// :::::: Table :::::: //
+table {
+    width          : 100%;
+    border-collapse: collapse;
+    text-align     : left;
+    cursor         : default;
+    border-spacing : 0;
+}
+th,td{
+    padding: 1rem;
+    white-space: nowrap;
+}
+th {
+    font-weight     : 500;
+    border-bottom   : 1px solid $colorBorder2;
+    background-color: $colorWhite;
+    font-size       : 1rem;
+    padding-top: .5rem;
+}
+tbody {
+    tr:not(tr:last-child) {
+        border-bottom: 1px solid $colorBorder;
+    }
+    tr:nth-child(odd) {
+        background-color: hsl(0, 0%, 98%);
+    }
+    tr:hover {
+        background-color: $colorWhiteHover;
+    }
+    td {
+        vertical-align: top;
+    }
+    td:last-child {
+        min-width: 150px;
+    }
+    .tdDescription{
+        white-space: normal;
+        min-width: 350px;
+    }
+    /* 
+    Delete
+    .tableText {
+        white-space: normal;
+        min-width  : 300px;
+    } */
+}
+// table small y estilos webkit scroll
+.tableScreenSmall {
+    overflow-x: auto;
+}
+.tableScreenSmall::-webkit-scrollbar {
+    height: .5rem;
+}
+.tableScreenSmall::-webkit-scrollbar-thumb {
+    background: $primaryColor;
+    border-radius: $borderRadius;
+}
+@include rwd_min(l) {
+    .btnTable {
+        &Delete::after {
+            content    : "Eliminar";
+            margin-left: .3em;
+        }
+        &See::after {
+            content    : "Ver";
+            margin-left: .3em;
+        }
+    }
+}
+/*
+.tableFixHead {
+    overflow: auto;
+    height  : 400px;
+}
+
+.tableFixHead thead th {
+    position: sticky;
+    top     : 0;
+    z-index : 1;
+} */

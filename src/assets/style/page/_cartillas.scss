@@ -1,0 +1,15 @@
+// -------------------------------------------
+// NUEVA CARTILLAS
+.btnAddMedic {
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+    align-items    : flex-start;
+    justify-content: end;
+    padding-bottom : .2rem;
+
+    @include rwd_max(md) {
+        padding-bottom: 0;
+        align-items   : flex-end;
+    }
+}

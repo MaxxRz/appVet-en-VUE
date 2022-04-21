@@ -1,0 +1,60 @@
+/* :::::: BUTTONS :::::: */
+
+.btn {
+    cursor               : pointer;
+    border               : 1px solid transparent;
+    border-radius        : $borderRadius;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius   : $borderRadius;
+    -ms-border-radius    : $borderRadius;
+    -o-border-radius     : $borderRadius;
+    padding              : .5em .8em;
+    font-size            : 1rem;
+    white-space          : nowrap;
+    user-select          : none;
+    background-color     : transparent;
+    display              : inline-block;
+    transition           : all .2s;
+    -webkit-transition   : all .2s;
+    -moz-transition      : all .2s;
+    -ms-transition       : all .2s;
+    -o-transition        : all .2s;
+
+    &.btnIcon {
+        min-width : 30px;
+        padding   : .5rem .75rem;
+        text-align: center;
+    }
+
+    &.btnBig {
+        padding  : .55rem .9rem;
+        font-size: 1.1rem;
+    }
+
+    &.btnSmall {
+        padding: .25rem .5rem;
+    }
+
+}
+
+.btnIconText svg {
+    margin-right: .3em;
+}
+.btnDisabled {
+    pointer-events: none;
+    opacity       : .8;
+}
+
+.btnPrimary {
+    @include variaColor($primaryColor, $primaryColor600, $primaryColor650);
+}
+.btnDanger {
+    @include variaColor($dangerColor, $dangerColor600, $dangerColor650);
+}
+
+.btnInfo {
+    @include variaColor($infoColor, $infoColor600, $infoColor650);
+}
+.btnsOptions button{
+    margin-left: .5rem;
+}

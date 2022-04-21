@@ -1,0 +1,25 @@
+
+@import 'utils/mixins';
+@import 'utils/variables';
+
+@import 'base/base';
+
+
+@import 'components/menu';
+@import 'components/body';
+@import 'components/section';
+@import 'components/pagination';
+
+
+@import 'base/inputs';
+@import 'base/buttons';
+@import 'base/table';
+@import 'base/showData';
+
+
+@import 'page/cartillas';
+
+// OTROS -----
+.textRigth{
+	text-align: right;
+}

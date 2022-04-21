@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500&family=Roboto&display=swap');
+
+$breakpoints:(
+    sm: 665px,
+    md: 975px,
+    l: 1240px,
+    xl: 1241px);
+
+/* Funetes */
+$bodyFont: 'Roboto',
+sans-serif;
+$titleFont: 'Spartan', sans-serif;
+
+// COLORS GRISES
+$colorWhite     : hsl(0, 0%, 100%);
+$colorWhiteHover: hsl(0, 0%, 96%);
+$colorBack      : hsl(0, 0%, 97%);
+$colorBorder    : hsl(0, 0%, 90%);
+$colorBorder2   : hsl(0, 0%, 80%);
+$textColor      : hsl(0, 0%, 10%);
+$textColorGrey  : hsl(0, 0%, 40%);
+
+// COLORS BASE
+$primaryColor   : #3e8c85;
+$primaryColor400: #9CCFCB;
+$primaryColor450: #64A8A3;
+$primaryColor600: #257771;
+$primaryColor650: #275753;
+
+$dangerColor   : #c73a21;
+$dangerColor400: #FF9784;
+$dangerColor450: #E06751;
+$dangerColor600: #af2e15;
+$dangerColor650: #8d1703;
+
+$infoColor   : #2974b8;
+$infoColor400: #081c30;
+$infoColor450: #4691d6;
+$infoColor600: #256aa8;
+$infoColor650: #226098;
+
+/* Z-index */
+$z-back   : -10;
+$z-normal : 1;
+$z-tooltip: 10;
+$z-fixed  : 100;
+$z-modal  : 900;
+$z-navSm  : 1000;
+
+// Options
+$borderRadius: 8px;
+
+//menu
+$marginRL: 1rem;

@@ -1,0 +1,262 @@
+/* =================== */
+/* === estilos menu == */
+
+// se inicia desde desktop a smarthpones
+
+.menuContainer {
+    width           : 18%;
+    height          : 100vh;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    z-index         : $z-navSm;
+    background-color: $colorWhite;
+    border-right    : 1px solid $colorBorder;
+
+
+    @include rwd_min(l) {
+        width: 15vw;
+    }
+}
+
+.menu_img {
+    margin  : 1.5rem $marginRL 1rem;
+    overflow: hidden;
+
+    img {
+        display  : block;
+        width    : 100%;
+        min-width: 9rem;
+    }
+}
+
+.menu_list {
+    margin-left : $marginRL;
+    margin-right: $marginRL;
+
+    &_block {
+        overflow             : hidden;
+        margin-bottom        : .25rem;
+        padding              : .8rem .65rem;
+        cursor               : pointer;
+        white-space          : nowrap;
+        border-radius        : $borderRadius;
+        -webkit-border-radius: $borderRadius;
+        -moz-border-radius   : $borderRadius;
+        -ms-border-radius    : $borderRadius;
+        -o-border-radius     : $borderRadius;
+
+        &:hover {
+            background-color: $primaryColor;
+            color           : $colorWhite;
+        }
+    }
+
+    .router-link-exact-active div{
+        background-color: $primaryColor;
+        color           : $colorWhite;
+    }
+}
+
+.menu_iconText svg {
+    min-width         : 1rem;
+    margin-right      : .25rem;
+    transition        : margin-right .2s;
+    -webkit-transition: margin-right .2s;
+    -moz-transition   : margin-right .2s;
+    -ms-transition    : margin-right .2s;
+    -o-transition     : margin-right .2s;
+}
+
+.navHr {
+    height       : 0;
+    opacity      : .3;
+    margin-top   : 1rem;
+    margin-bottom: 1rem;
+}
+
+.menu_bottom {
+    margin-left    : $marginRL;
+    margin-right   : $marginRL;
+    margin-bottom  : $marginRL;
+    width          : calc(100% - (2 * #{$marginRL}));
+    position       : absolute;
+    bottom         : 0;
+    display        : flex;
+    justify-content: space-between;
+
+    span {
+        font-size            : 1.8rem;
+        padding              : 1.5rem;
+        border-radius        : $borderRadius;
+        -webkit-border-radius: $borderRadius;
+        -moz-border-radius   : $borderRadius;
+        -ms-border-radius    : $borderRadius;
+        -o-border-radius     : $borderRadius;
+
+
+        &:hover {
+            background-color: $primaryColor;
+            color           : $colorWhite;
+        }
+    }
+}
+
+// Sreen MD menu
+@include rwd_max(md) {
+    .menuContainer {
+        width             : 4.5rem;
+        transition        : width .2s;
+        -webkit-transition: width .2s;
+        -moz-transition   : width .2s;
+        -ms-transition    : width .2s;
+        -o-transition     : width .2s;
+    }
+
+    .menu_img {
+        margin-right: 1.25rem;
+        margin-left : 1.25rem;
+    }
+
+    .menu_list_block {
+        padding-left : .6rem;
+        padding-right: .6rem;
+    }
+
+    .menu_iconText svg {
+        margin-right: 1rem;
+        margin-left : .1rem;
+    }
+
+
+    .menu_bottom {
+        bottom        : 0;
+        flex-direction: column-reverse;
+
+        span {
+            font-size : 1.5rem;
+            padding   : 1.25rem;
+            margin-top: .5rem;
+        }
+    }
+}
+
+// menu responsive pantalla small
+@include rwd_max(sm) {
+
+    .navHr,
+    .menu_bottom {
+        display: none;
+    }
+
+    .menuContainerSmall {
+        margin-top   : 0;
+        border-bottom: 1px solid $colorBorder;
+        width        : 100%;
+        top          : 0;
+        left         : 0;
+        max-width    : 100%;
+        position     : fixed;
+        z-index      : $z-navSm;
+    }
+
+    .menu_header {
+        display         : flex;
+        padding         : 1rem 1rem .5rem;
+        justify-content : space-between;
+        background-color: $colorWhite;
+
+    }
+
+    .menu_img {
+        margin: 0;
+
+        img {
+            height: 2.5rem;
+        }
+    }
+
+    .menu_list {
+        border-top        : 1px solid $colorBorder;
+        position          : absolute;
+        width             : 100%;
+        height            : auto;
+        background-color  : $colorWhite;
+        font-size         : 1.5rem;
+        top               : -120vh;
+        transition        : top .2s;
+        -webkit-transition: top .2s;
+        -moz-transition   : top .2s;
+        -ms-transition    : top .2s;
+        -o-transition     : top .2s;
+        z-index           : $z-back;
+        margin-left       : 0;
+
+
+        &_block {
+            margin-top     : 0;
+            height         : calc((100vh - 6rem) / 7);
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            border-radius  : 0;
+
+            &:hover {
+                background-color: $primaryColor;
+                color           : $colorWhite;
+            }
+        }
+    }
+
+    .menu_toogle {
+        align-self : center;
+        padding-top: .1rem;
+        width      : 2rem;
+        height     : 2rem;
+        cursor     : pointer;
+        display    : block;
+
+        .icon_bar {
+            width             : 100%;
+            height            : 4px;
+            background-color  : black;
+            margin            : 4px auto;
+            transition        : all 0.3s;
+            -webkit-transition: all 0.3s;
+            -moz-transition   : all 0.3s;
+            -ms-transition    : all 0.3s;
+            -o-transition     : all 0.3s;
+        }
+
+        @include rwd_min(sm) {
+            display: none;
+        }
+    }
+
+    /* Menu button toggle activado */
+    .nav_on {
+        .menu_toogle div:first-child {
+            transform        : rotate(45deg) translate(4px, 5px);
+            -webkit-transform: rotate(45deg) translate(4px, 5px);
+            -moz-transform   : rotate(45deg) translate(4px, 5px);
+            -ms-transform    : rotate(45deg) translate(4px, 5px);
+            -o-transform     : rotate(45deg) translate(4px, 5px);
+        }
+
+        .menu_toogle div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu_toogle div:last-child {
+            transform        : rotate(-45deg) translate(6px, -8px);
+            -webkit-transform: rotate(-45deg) translate(6px, -8px);
+            -moz-transform   : rotate(-45deg) translate(6px, -8px);
+            -ms-transform    : rotate(-45deg) translate(6px, -8px);
+            -o-transform     : rotate(-45deg) translate(6px, -8px);
+        }
+
+        .menu_list {
+            top: 4rem;
+        }
+    }
+}

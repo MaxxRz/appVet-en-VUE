@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+}
+
+a {
+    text-decoration: none;
+    color: $textColor;
+}
+
+body{
+    background-color: $colorBack;
+    font-family: $bodyFont;
+    font-size: 14px;
+}
+li {
+    list-style: none;
+    line-height: 0;
+}
+
+
+h1, h2, h3, h4 {
+    line-height: 1;
+    font-family: $titleFont;
+}
+
+h1{
+    margin: 1.5rem 0 0;
+    font-size: 2.25rem;
+    font-weight: 400;
+
+    @include rwd_min(sm){
+        font-size: 2.5rem;
+    }
+}
+h2,h3{
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+// Remueve los outline de -webkit-
+:focus { outline: none; }

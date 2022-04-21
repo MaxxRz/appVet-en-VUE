@@ -1,0 +1,78 @@
+// media query mini-widht
+// se introduce un breakpoint u otra medida
+
+@mixin rwd_min($bp) {
+    @if map-has-key($breakpoints, $bp) {
+        @media screen and (min-width: map-get($breakpoints, $bp)) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (min-width: $bp) {
+            @content;
+        }
+    }
+}
+
+// media query max-width
+@mixin rwd_max($bp) {
+    @if map-has-key($breakpoints, $bp) {
+        @media screen and (max-width: map-get($breakpoints, $bp)) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (max-width: $bp) {
+            @content;
+        }
+    }
+}
+
+
+// pase para btns introduce 3 colores
+// 1. primario el que domina 
+// 2. para hover
+// 3. activo, mas obscuro
+@mixin variaColor($color1, $color2, $color3) {
+    color           : $colorWhite;
+    background-color: $color1;
+
+    &:hover {
+        background-color: $color2;
+    }
+
+    &:active {
+        background-color: $color3;
+    }
+
+
+    &Ghost {
+        border-color: $color1;
+        color       : $color1;
+
+        &:hover {
+            background-color: $color2;
+            color           : $colorWhite;
+            border-color    : $color2;
+        }
+
+        &:active {
+            background-color: $color3;
+        }
+    }
+
+    &Trans {
+        color: $textColorGrey;
+
+        &:hover {
+            background-color: $color2;
+            color           : $colorWhite;
+        }
+
+        &:active {
+            background-color: $color3;
+        }
+    }
+}
